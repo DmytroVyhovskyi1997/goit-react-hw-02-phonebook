@@ -49,16 +49,25 @@ export class App extends Component {
     this.setState({ [name]: value });
   };
 
-  deleteToDo = todoId => {
+  deleteContact = contactId => {
     this.setState(prevState => ({
-      contacts: prevState.contacts.filter(todo => todo.id !== todoId),
+      contacts: prevState.contacts.filter(contact => contact.id !== contactId),
     }));
   };
 
   render() {
     const { filter, contacts } = this.state;
     return (
-      <div>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+          fontSize: 20,
+          color: '#010101',
+        }}
+      >
         <h1>Phonebook</h1>
         <FormContact onSubmit={this.addContact} />
         <h2>Contacts</h2>
@@ -67,10 +76,9 @@ export class App extends Component {
         )}
         <Contacts
           contacts={this.changeFilter()}
-          onDeleteTodo={this.deleteToDo}
+          onDeleteContact={this.deleteContact}
         />
       </div>
     );
   }
 }
-export default App;

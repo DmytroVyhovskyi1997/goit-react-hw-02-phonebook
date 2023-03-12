@@ -2,10 +2,10 @@ import PropTypes from 'prop-types';
 import css from './ContactFilter.module.css';
 
 export const ContactFilter = ({ filter, onChange }) => (
-  <div>
+  <div >
     <label className={css.filterLabel}>Find contacts by Name </label>
     <input
-      className={css}
+      className={css.formInput}
       type="text"
       placeholder="Enter filter"
       name="filter"
