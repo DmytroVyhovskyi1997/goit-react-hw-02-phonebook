@@ -24,14 +24,14 @@ export class App extends Component {
     this.setState(({ contacts }) => ({
       contacts: [...contacts, contact],
     }));
-    const contactsLists = [...this.state.contacts];
+    const contactsAlert = [...this.state.contacts];
 
-    if (contactsLists.findIndex(contact => name === contact.name) !== -1) {
+    if (contactsAlert.findIndex(contact => name === contact.name) !== -1) {
       alert(`${name} is already in contacts.`);
     } else {
-      contactsLists.push({ name, id, number });
+      contactsAlert.push({ name, id, number });
     }
-    this.setState({ contacts: contactsLists });
+    this.setState({ contacts: contactsAlert  });
   };
 
   changeFilter = () => {
